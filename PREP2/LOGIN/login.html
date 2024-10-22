@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PREP QUEST</title>
+    <link rel="stylesheet" href="login-styles.css"> <!-- Estilos específicos para login -->
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h2>PREP QUEST - LOGIN </h2>
+            <nav>
+                <a href="">Início</a>
+                <a href="EMPRESA/empresas.html">Empresas</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-register">
+            <div class="form-container" id="login-form">
+                <h3>Login</h3>
+                <form action="login-process.php" method="POST">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Entrar</button>
+                </form>
+                <p id="register-link">Ainda não tem uma conta? <a href="#register-section" onclick="showRegister()">Registre-se</a></p>
+            </div>
+            
+            <div class="form-container" id="register-section" style="display: none;">
+                <h3>Registrar</h3>
+                <form action="register-process.php" method="POST"> <!-- Ação para enviar os dados para o PHP -->
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+
+                    <label for="register-password">Senha:</label>
+                    <input type="password" id="register-password" name="password" required>
+
+                    <button type="submit">Criar Conta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 PREP QUEST. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function showRegister() {
+            // Oculta o formulário de login e o link de registrar
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-link').style.display = 'none';
+
+            // Exibe o formulário de registro
+            document.getElementById('register-section').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
